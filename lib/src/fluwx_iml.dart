@@ -532,13 +532,11 @@ class Fluwx {
 
   static void _addCallback(String method, FluwxCallBack callback) {
     List<FluwxCallBack> queuedList = Fluwx()._queueMap[method];
-    print(queuedList);
     if (queuedList == null) {
       queuedList = [];
       Fluwx()._queueMap[method] = queuedList;
     }
     queuedList.add(callback);
-    print("afdsk");
   }
 
   static void handleResponse<T>(String methodName, T data) {
